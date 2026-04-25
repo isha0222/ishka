@@ -461,8 +461,8 @@ h1{
     <p id="popupText"></p>
     <button onclick="closePopup()">Close ✨</button>
 </div>
-<audio id="bgMusic" autoplay loop>
-    <source src="a3.mp3" type="audio/mp4">
+<audio id="storyMusic" loop>
+    <source src="a2.m4a" type="audio/mp4">
 </audio>
 <script>
 // stars
@@ -482,14 +482,15 @@ function showPopup(text){
 function closePopup(){
     document.getElementById("popupBox").style.display="none";
 }
-window.onload = function(){
-    const music = document.getElementById("bgMusic");
-    music.play().catch(()=>{
-        document.body.addEventListener("click", ()=>{
+window.addEventListener("load", function () {
+    const music = document.getElementById("storyMusic");
+
+    music.play().catch(() => {
+        document.body.addEventListener("click", function () {
             music.play();
-        }, {once:true});
+        }, { once: true });
     });
-}
+});
 </script>
 
 </body>
