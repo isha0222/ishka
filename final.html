@@ -251,7 +251,7 @@ I LOVE YOU Bau J Badhu My Husband… not for a moment… but for a lifetime ♾�
 </div>
 <!-- music -->
 <audio id="bgMusic" autoplay loop>
-    <source src="a2.m4a" type="audio/mp4">
+    <source src="a2.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -448,12 +448,12 @@ function closeSecret(){
     document.getElementById("secretPopup").style.display="none";
 }
 window.onload = function(){
-    const music = document.getElementById("bgMusic");
-    music.play().catch(()=>{
-        document.body.addEventListener("click", ()=>{
-            music.play();
-        }, {once:true});
-    });
+   const music = document.getElementById("bgMusic");
+   music.play().catch(()=>{
+      document.body.addEventListener("click", ()=>{
+         music.play();
+      }, {once:true});
+   });
 }
 </script>
 
