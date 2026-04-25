@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open When... ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#000814,#001d3d,#003566);
+    color:white;
+    overflow-x:hidden;
+    padding:30px;
+    text-align:center;
+    position:relative;
+}
+
+/* stars */
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+/* heading */
+.header h1{
+    font-size:50px;
+    font-family:'Playfair Display',serif;
+    text-shadow:0 0 15px #00b4d8;
+}
+.header p{
+    margin-top:10px;
+    color:#d9faff;
+    margin-bottom:40px;
+}
+
+
+/* cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:25px;
+    justify-content:center;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+.card{
+    width:260px;
+    min-height:180px;
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 20px rgba(0,180,216,0.2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    cursor:pointer;
+    transition:0.4s;
+    font-size:22px;
+    font-weight:600;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 0 25px #00b4d8;
+}
+
+/* popup */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:600px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 25px #00b4d8;
+    display:none;
+    z-index:999;
+    animation:fadeIn 0.5s ease;
+}
+
+.popup h2{
+    margin-bottom:20px;
+    color:#00b4d8;
+}
+
+.popup p{
+    font-size:18px;
+    line-height:1.8;
+    color:#fff;
+}
+
+.popup button{
+    margin-top:25px;
+    padding:10px 25px;
+    border:none;
+    border-radius:30px;
+    background:#00b4d8;
+    color:white;
+    cursor:pointer;
+}
+
+.next-btn{
+    display:inline-block;
+    margin-top:50px;
+    text-decoration:none;
+    background:#00b4d8;
+    color:white;
+    padding:14px 35px;
+    border-radius:30px;
+    box-shadow:0 0 15px #00b4d8;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translate(-50%,-45%);}
+    to{opacity:1; transform:translate(-50%,-50%);}
+}
+
+/* responsive */
+@media(max-width:768px){
+    .header h1{
+        font-size:34px;
+    }
+
+    .cards{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        padding: 10px;
+    }
+
+    .card{
+        width:100%;
+        max-width:none;
+        min-height:140px;
+        font-size:16px;
+        padding:15px;
+    }
+    .popup h2{
+        font-size: 20px;
+    }
+    .popup p{
+        font-size: 14px;
+    }
+}
+
+.love-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+    pointer-events:none;
+}
+
+.love-bg span{
+    position:absolute;
+    color:rgba(255,255,255,0.05);
+    font-size:24px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    white-space:nowrap;
+    animation: moveDown linear infinite;
+    pointer-events:none;
+}
+
+@keyframes moveDown{
+    from{
+        transform:translateY(-120%);
+    }
+    to{
+        transform:translateY(120vh);
+    }
+}
+
+/* content upar */
+.header,.cards,.next-btn{
+    position:relative;
+    z-index:2;
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="love-bg"></div>
+<div class="header">
+    <h1>Open When... ❤️</h1>
+    <p>A little love note for every mood 💌</p>
+</div>
+
+<div class="cards">
+    <div class="card" onclick="showPopup('Open When You’re Sad 😢','Hey my love… please smile. No matter what happens, I’m always here for you. Come hug me and let me fix everything ❤️')">😢 Sad</div>
+
+    <div class="card" onclick="showPopup('Open When You Miss Me 😢','Close your eyes and feel my hug… I’m always with you in every heartbeat 💙')">😢 Miss Me</div>
+
+    <div class="card" onclick="showPopup('Open When You Need Motivation 💪','You are stronger than you think, braver than you believe, and loved more than you know ❤️')">💪 Motivation</div>
+
+    <div class="card" onclick="showPopup('Open When You Want To Smile 😊','Remember our first kiss? 😘 Or my flopped surprise? 😂 See… you’re smiling already 💕')">😊 Smile</div>
+
+    <div class="card" onclick="showPopup('Open When We Fight 💔','No fight is bigger than our love. Let’s solve it together… always ❤️')">💔 Fight</div>
+
+    <div class="card" onclick="showPopup('Open When You Feel Alone 🌙','Look at the moon… maybe we’re under the same sky, thinking about each other 💫')">🌙 Alone</div>
+</div>
+
+<a href="letter.html" class="next-btn">Next Page ✉️</a>
+
+<div class="popup" id="popup">
+    <h2 id="popupTitle"></h2>
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Close ❤️</button>
+</div>
+
+<script>
+// stars
+for(let i=0;i<100;i++){
+    let star=document.createElement("span");
+    star.style.top=Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.animationDuration=(Math.random()*3+2)+"s";
+    document.querySelector(".stars").appendChild(star);
+}
+for(let i=0;i<15;i++){
+    let txt=document.createElement("span");
+    txt.innerText="I Am Always There For You ❤️";
+    txt.style.top=Math.random()*100+"%";
+    txt.style.left=Math.random()*100+"%";
+    txt.style.animationDuration=(Math.random()*8+12)+"s";
+    txt.style.fontSize=(Math.random()*15+18)+"px";
+    document.querySelector(".love-bg").appendChild(txt);
+}
+// popup
+function showPopup(title,text){
+    document.getElementById("popupTitle").innerText=title;
+    document.getElementById("popupText").innerText=text;
+    document.getElementById("popup").style.display="block";
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>

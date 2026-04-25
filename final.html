@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever Us ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    min-height:100vh;
+    background: radial-gradient(circle,#001d3d,#000814);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    overflow:hidden;
+    color:white;
+    position:relative;
+}
+
+/* glowing text */
+h1{
+    font-size:60px;
+    font-family:'Playfair Display',serif;
+    text-shadow:0 0 10px #00b4d8,
+                 0 0 20px #00b4d8,
+                 0 0 40px #00b4d8;
+    animation: glow 2s infinite alternate;
+}
+
+p{
+    margin-top:15px;
+    font-size:22px;
+    color:#d9faff;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #00b4d8;
+    }
+    to{
+        text-shadow:0 0 30px #00b4d8,0 0 60px #00b4d8;
+    }
+}
+
+/* button */
+.btn{
+    margin-top:40px;
+    background:#00b4d8;
+    color:white;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 0 20px #00b4d8;
+}
+
+/* popup */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:600px;
+    max-height:80vh;   /* 👈 important */
+    overflow-y:auto;   /* 👈 scroll enable */
+    display:none;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 25px #00b4d8;
+    z-index:999;
+}
+
+
+.popup h2{
+    font-size:35px;
+}
+.popup p{
+    font-size:18px;
+}
+.popup::-webkit-scrollbar{
+    width:6px;
+}
+
+.popup::-webkit-scrollbar-thumb{
+    background:#00b4d8;
+    border-radius:10px;
+}
+/* floating hearts */
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation: floatHeart 8s linear infinite;
+}
+@keyframes floatHeart{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* responsive */
+@media(max-width:768px){
+    h1{
+        font-size:34px;
+    }
+    p{
+        font-size:18px;
+    }
+    .popup h2{
+    font-size:25px;
+}
+.popup p{
+    font-size:12px;
+}
+}
+
+.close-btn{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 15px #ff4d6d;
+}
+/* Popup Common */
+.pop{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:600px;
+    max-height:80vh;
+    overflow-y:auto;
+    display:none;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 25px #00b4d8;
+    z-index:999;
+}
+
+.pop h2{
+    font-size:35px;
+}
+
+.pop p{
+    font-size:18px;
+    line-height:1.8;
+    white-space:pre-line;
+}
+
+.pop::-webkit-scrollbar{
+    width:6px;
+}
+.pop::-webkit-scrollbar-thumb{
+    background:#00b4d8;
+    border-radius:10px;
+}
+
+.close-btn{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 15px #ff4d6d;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .pop h2{
+        font-size:25px;
+    }
+    .pop p{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+<body>
+
+<h1>I Love You Forever ❤️</h1>
+<p>You Are My Today, Tomorrow & Always ♾️</p>
+
+<button class="btn" onclick="showSurprise()">Click For Surprise 🎁</button>
+
+<div class="popup" id="popup">
+    <h2>My Forever ❤️</h2>
+<p>
+If you are reading this…<br><br>
+
+Just know that you are not just a part of my life…<br>
+You are the reason my life feels like home 🏡💙<br><br>
+
+Every laugh, every fight, every silence…<br>
+Everything made me fall in love with you deeper than before ❤️<br><br>
+
+I don’t know what tomorrow brings…<br>
+But I know one thing for sure…<br><br>
+
+No distance, no argument, no time…<br>
+Can ever change what I feel for you ❤️♾️<br><br>
+
+You are my peace in chaos…<br>
+My smile in sadness…<br>
+And my forever person… 💍<br><br>
+
+If life gives me another chance…<br>
+I will choose you again… without thinking… every single time ❤️<br><br>
+
+And if I ever forget to say it…<br>
+Please remember this…<br><br>
+
+I LOVE YOU Bau J Badhu My Husband… not for a moment… but for a lifetime ♾️❤️
+</p>
+    <button class="close-btn" onclick="closeSurprise()">Close ❤️</button>
+</div>
+<!-- Secret Button -->
+<button class="btn" onclick="showSecret()">Secret Message ✨</button>
+
+<!-- Secret Popup -->
+<div class="pop" id="secretPopup">
+    <h2>✨ Secret Message ✨</h2>
+    <p id="secretText"></p>
+    <button class="close-btn" onclick="closeSecret()">Close ❤️</button>
+</div>
+<!-- music -->
+<audio id="bgMusic" autoplay loop>
+    <source src="a2.m4a" type="audio/mp4">
+</audio>
+
+<script>
+// floating hearts
+for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💙";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+}
+
+function showSurprise(){
+    document.getElementById("popup").style.display="block";
+}
+function closeSurprise(){
+    document.getElementById("popup").style.display="none";
+}
+
+// floating hearts
+for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💙";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+}
+
+// Surprise popup
+function showSurprise(){
+    document.getElementById("popup").style.display="block";
+}
+
+function closeSurprise(){
+    document.getElementById("popup").style.display="none";
+}
+
+// Secret popup
+let secretIndex = 0;
+
+const secretTitles = [
+    "💌 Hidden Message 1 of 4",
+    "💍 Hidden Message 2 of 4",
+    "🌙 Hidden Message 3 of 4",
+    "🥺 Hidden Message 4 of 4"
+];
+
+const secretMessages = [
+
+`💌 Deep Emotional
+
+Maybe I don’t always say it perfectly…
+Maybe I fight… maybe I get angry…
+Maybe I hurt you without meaning to… 😔
+
+But one thing has never changed…
+and never will… ❤️
+
+In the middle of every fight…
+every misunderstanding…
+every silence…
+my heart still whispers your name… 🥹
+
+You are the person I pray for…
+the person I wait for…
+and the person I want forever with me… 💍
+
+Even when I act strong…
+the truth is…
+I need you more than you know… 💙
+
+Please stay…
+in every mood…
+in every version of me… ❤️♾️`,
+
+`💍 Forever Promise
+
+I promise…
+
+To choose you…
+on easy days…
+and on hard days… ❤️
+
+To love you…
+when life is beautiful…
+and when life feels heavy… 🥹
+
+To stand by your side…
+through every storm…
+through every smile…
+through every dream… 💙
+
+You are my forever…
+my always…
+and my once in a lifetime… 💍♾️`,
+
+`🌙 Movie Ending
+
+If this website ever ends…
+just know…
+my love never will… ❤️
+
+This was just a small way…
+to show you…
+how deeply I love you… 🥹
+
+Our story isn’t perfect…
+but it is mine…
+and it is yours…
+and that makes it beautiful… 💙
+
+The end?
+
+No…
+This is just the beginning… ❤️♾️`,
+
+`🥺 For Us…
+
+Sometimes… I feel like I’m breaking inside… 😔
+
+I don’t like it when you make me cry…
+I don’t like it when you don’t understand what I’m trying so hard to say… 💔
+
+I have imagined my whole future with you…
+every little dream…
+every little moment…
+every forever… ❤️
+
+And when things go wrong between us…
+it hurts more than I can ever explain…
+
+Sometimes I get angry…
+but truthfully…
+most of the time I’m just hurt… 🥹
+
+I get mad at myself…
+for overthinking…
+for crying…
+for feeling too much…
+
+I’m tired…
+tired of the fights…
+tired of misunderstandings…
+tired of feeling like the world is against us… 🌍💔
+
+We never wished bad for anyone…
+We never wanted to hurt anyone…
+Then why does it feel like our happiness is always being tested…?
+
+Why does the life we dream of…
+always feel so far away… 😢
+
+How many more fights do we have to survive…?
+How much more pain do we have to go through…?
+
+Bugga… 🥺❤️
+
+All I ever wanted…
+was you…
+us…
+our peace…
+our little happy world… 🏡💙
+
+Please understand me…
+Please hold me…
+Please don’t let “us” break…
+
+Because even after everything…
+through every tear…
+through every fight…
+through every pain…
+
+I still choose you…
+Only you… ❤️♾️`
+];
+
+function showSecret(){
+    document.getElementById("secretPopup").style.display="block";
+
+    document.querySelector("#secretPopup h2").innerText = secretTitles[secretIndex];
+    document.getElementById("secretText").innerText = secretMessages[secretIndex];
+
+    secretIndex++;
+    if(secretIndex >= secretMessages.length){
+        secretIndex = 0;
+    }
+}
+
+function closeSecret(){
+    document.getElementById("secretPopup").style.display="none";
+}
+window.onload = function(){
+    const music = document.getElementById("bgMusic");
+    music.play().catch(()=>{
+        document.body.addEventListener("click", ()=>{
+            music.play();
+        }, {once:true});
+    });
+}
+</script>
+
+</body>
+</html>

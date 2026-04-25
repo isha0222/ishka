@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letter For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#000814,#001d3d,#003566);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    overflow-x:hidden;
+    padding:20px;
+    text-align:center;
+    position:relative;
+    font-family:'Poppins',sans-serif;
+}
+
+/* stars */
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+
+h1{
+    font-size:42px;
+    margin-bottom:25px;
+    font-family:'Playfair Display',serif;
+    text-shadow:0 0 15px #00b4d8;
+}
+
+/* envelope */
+.envelope{
+    position:relative;
+    width:340px;
+    height:230px;
+    background:#0a3d62;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(0,180,216,0.4);
+}
+
+.flap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#00b4d8;
+    clip-path: polygon(0 0, 50% 55%, 100% 0);
+    transform-origin:top;
+    transition:1s;
+    z-index:2;
+}
+
+/* letter */
+.letter{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,100%);
+    width:90%;
+    max-width:750px;
+    height:80vh;
+    background:#fffaf0;
+    color:#333;
+    border-radius:20px;
+    padding:30px;
+    overflow-y:auto;
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+    transition:1s;
+    z-index:10;
+    text-align:left;
+    border:8px solid #f8f1e7;
+}
+
+.envelope.open .flap{
+    transform:rotateX(180deg);
+}
+
+.envelope.open + .letter{
+    transform:translate(-50%,-50%);
+}
+
+.letter h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00b4d8;
+    font-family:'Dancing Script',cursive;
+    font-size:40px;
+}
+
+.letter p{
+    font-size:18px;
+    line-height:1.9;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:28px;
+    color:#0a3d62;
+}
+
+/* close btn */
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    background:#00b4d8;
+    color:white;
+    border:none;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    box-shadow:0 0 10px #00b4d8;
+}
+
+/* next btn */
+.next-btn{
+    margin-top:30px;
+    text-decoration:none;
+    background:#00b4d8;
+    color:white;
+    padding:14px 35px;
+    border-radius:30px;
+    box-shadow:0 0 15px #00b4d8;
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:30px;
+    }
+    .envelope{
+        width:280px;
+        height:190px;
+    }
+    .letter{
+        height:75vh;
+        padding:20px;
+    }
+    .letter p{
+        font-size:16px;
+    }
+    .letter h2{
+        font-size: 30px;
+    }
+    .signature{
+        font-size: 16px;
+    }
+}
+/* moving transparent text */
+.love-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+    pointer-events:none;   /* important */
+}
+
+.love-bg span{
+    position:absolute;
+    color:rgba(255,255,255,0.06);
+    font-size:30px;
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    white-space:nowrap;
+    animation: moveText linear infinite;
+    pointer-events:none;   /* important */
+}
+/* content/button ऊपर */
+h1,p,.btn,.popup{
+    position:relative;
+    z-index:2;
+}
+
+@keyframes moveText{
+    from{
+        transform:translateX(100vw);
+    }
+    to{
+        transform:translateX(-120%);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="love-bg"></div>
+<h1>A Letter For You ❤️</h1>
+
+<div class="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+</div>
+
+<div class="letter">
+    <button class="close-btn" onclick="closeLetter()">✖</button>
+
+    <h2>To My Forever Person 💌</h2>
+    <p>
+        Dear Husband ❤️<br><br>
+
+        From the day you saw me on <b>15 Oct 2021</b>, destiny had already started writing our story…  
+        And then on <b>10 Sep 2022</b>, we became Snapchat friends 👻… who knew a small add request would change my whole life?<br><br>
+
+        Our first meeting on <b>26 Sep 2022</b> was magical ✨  
+        Our first picture… our first hug… our first kiss… every “first” with you is safely kept in my heart forever 💙<br><br>
+
+        We fought… we cried… we had misunderstandings 😢  
+        But even in our hardest phase, somewhere deep inside, I always knew my heart belonged only to you ❤️<br><br>
+
+        You stayed… You came back… You fought for us…  
+        And finally on <b>14 Nov 2025</b> we became FOREVER 💍♾️<br><br>
+
+        I know I hurt you sometimes… I know I make mistakes…  
+        But loving you has always been the purest thing I’ve ever done 💙<br><br>
+
+        Thank you for every long drive 🚗  
+        Every Surprise 🎶  
+        Every hug 🤗  
+        Every surprise 🎁  
+        Every prayer together 🙏<br><br>
+
+        Thank you for being my safe place… my peace… my home 🏡💙<br><br>
+
+        I promise… no matter what happens…  
+        I will choose you… again and again… every single day ❤️<br><br>
+
+        I Love You Forever my Buggaaa♾️
+    </p>
+
+    <div class="signature">
+        Yours forever,<br>
+        Wifey 💋
+    </div>
+</div>
+
+<a href="final.html" class="next-btn">Final Surprise 🎁</a>
+
+<script>
+// stars
+for(let i=0;i<150;i++){
+ let star=document.createElement("span");
+ star.style.top=Math.random()*100+"%";
+ star.style.left=Math.random()*100+"%";
+ star.style.animationDuration=(Math.random()*3+2)+"s";
+ document.querySelector(".stars").appendChild(star);
+}
+for(let i=0;i<20;i++){
+    let txt=document.createElement("span");
+    txt.innerText="I Love You ❤️";
+    txt.style.top=Math.random()*100+"%";
+    txt.style.left=Math.random()*100+"%";
+    txt.style.animationDuration=(Math.random()*10+10)+"s";
+    txt.style.fontSize=(Math.random()*20+20)+"px";
+    document.querySelector(".love-bg").appendChild(txt);
+}
+function openLetter(){
+    document.querySelector(".envelope").classList.add("open");
+}
+
+function closeLetter(){
+    document.querySelector(".envelope").classList.remove("open");
+}
+</script>
+
+</body>
+</html>

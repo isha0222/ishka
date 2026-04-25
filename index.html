@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unlock My Heart ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#000814,#001d3d,#003566);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    overflow:hidden;
+    position:relative;
+    text-align:center;
+    padding:20px;
+}
+
+/* Stars */
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+/* Container */
+.container{
+    z-index:2;
+    width:90%;
+    max-width:450px;
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:40px 30px;
+    box-shadow:0 0 25px rgba(0,180,216,0.3);
+    animation: fadeIn 1.5s ease;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    margin-bottom:10px;
+    text-shadow:0 0 15px #00b4d8;
+}
+
+p{
+    font-size:18px;
+    color:#d9faff;
+    margin-bottom:10px;
+}
+
+small{
+    display:block;
+    margin-bottom:25px;
+    color:#90e0ef;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:30px;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#00b4d8;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 0 15px #00b4d8;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    color:#001d3d;
+}
+
+.bottom-text{
+    margin-top:20px;
+    font-size:14px;
+    color:#caf0f8;
+}
+
+.error{
+    margin-top:15px;
+    color:#ff4d6d;
+    font-size:14px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+    h1{
+        font-size:20px;
+    }
+    p{
+        font-size:14px;
+    }
+    input{
+        width: 60%;
+        font-size: 12px;
+    }
+    button{
+        width: 60%;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+    <h1>A Special Surprise Awaits You ❤️</h1>
+    <p>Only My Husband Can Unlock This… 🔐</p>
+    <small>Hint: The day I said YES to forever 💍</small>
+
+    <input type="password" id="password" placeholder="Enter Our Special Date…">
+
+    <button onclick="checkPassword()">Unlock My Heart ❤️</button>
+
+    <div class="error" id="errorMsg"></div>
+
+    <div class="bottom-text">Made with endless love… just for you ♾️</div>
+</div>
+
+<script>
+// Stars
+for(let i=0;i<100;i++){
+    let star=document.createElement("span");
+    star.style.top=Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.animationDuration=(Math.random()*3+2)+"s";
+    document.querySelector(".stars").appendChild(star);
+}
+
+// Password check
+function checkPassword(){
+    let password=document.getElementById("password").value;
+
+    if(password==="0811"){
+        window.location.href="home.html";
+    }else{
+        document.getElementById("errorMsg").innerText="Wrong password 💔 Try again my love...";
+    }
+}
+</script>
+
+</body>
+</html>

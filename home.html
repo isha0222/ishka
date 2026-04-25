@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background: linear-gradient(135deg,#000814,#001d3d,#003566);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    color:white;
+    text-align:center;
+}
+
+/* Stars */
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
+}
+.stars span{
+    position:absolute;
+    display:block;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* Main Box */
+.container{
+    z-index:2;
+    padding:40px;
+    width:90%;
+    max-width:700px;
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,180,216,0.3);
+    animation: fadeIn 2s ease;
+}
+
+.container h1{
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+    color:#fff;
+    text-shadow:0 0 15px #00b4d8;
+    margin-bottom:15px;
+}
+
+.container p{
+    font-size:16px;
+    margin-bottom:30px;
+    color:#d9faff;
+}
+
+.btn{
+    text-decoration:none;
+    background:#00b4d8;
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:16px;
+    transition:0.4s;
+    box-shadow:0 0 15px #00b4d8;
+}
+
+.btn:hover{
+    background:white;
+    color:#001d3d;
+    box-shadow:0 0 25px white;
+}
+
+/* Popup Text */
+.popup-text{
+    position:absolute;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    text-shadow:0 0 10px #00b4d8;
+    animation: floatUp 2s ease forwards;
+    pointer-events:none;
+    z-index:5;
+}
+
+@keyframes floatUp{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-80px) scale(1.5);
+    }
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .container{
+        padding:25px;
+    }
+    .container h1{
+        font-size:34px;
+    }
+    .container p{
+        font-size:16px;
+    }
+    .btn{
+        font-size:14px;
+        padding:10px 20px;
+    }
+    .popup-text{
+        font-size:12px;
+    }
+}
+
+@media(max-width:480px){
+    .container h1{
+        font-size:25px;
+    }
+    .container p{
+        font-size:14px;
+    }
+    .popup-text{
+        font-size:12px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+    <h1>A Special Surprise ❤️</h1>
+    <p>For The Most Amazing Husband In The World 💙</p>
+    <a href="coundown.html" class="btn">Enter Our Story ✨</a>
+</div>
+
+<script>
+// Stars
+const stars = document.querySelector('.stars');
+for(let i=0;i<100;i++){
+    let star = document.createElement('span');
+    star.style.top = Math.random()*100 + '%';
+    star.style.left = Math.random()*100 + '%';
+    star.style.animationDuration = (Math.random()*3+2)+'s';
+    stars.appendChild(star);
+}
+
+// Cute messages
+const messages = [
+    "I Love You ❤️",
+    "My Forever 💙",
+    "You Are My Home 🏡",
+    "My Safe Place ✨",
+    "Best Husband 😘",
+    "Forever Us ♾️",
+    "You Complete Me 💞",
+    "My Heart Beats For You ❤️"
+];
+
+document.body.addEventListener("click", function(e){
+    if(e.target.classList.contains("btn")) return;
+
+    let text = document.createElement("div");
+    text.className = "popup-text";
+    text.innerText = messages[Math.floor(Math.random()*messages.length)];
+
+    text.style.left = e.pageX + "px";
+    text.style.top = e.pageY + "px";
+
+    document.body.appendChild(text);
+
+    setTimeout(()=>{
+        text.remove();
+    },2000);
+});
+</script>
+
+</body>
+</html>

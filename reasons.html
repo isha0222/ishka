@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I Love You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:linear-gradient(135deg,#000814,#001d3d,#003566);
+    font-family:'Dancing Script',cursive;
+}
+
+/* title */
+h1{
+    text-align:center;
+    color:white;
+    font-family:'Playfair Display',serif;
+    margin:30px 10px;
+    text-shadow:0 0 15px #00b4d8;
+}
+
+.subtitle{
+    text-align:center;
+    color:#d9faff;
+    margin-bottom:20px;
+    font-family:fantasy;
+    font-size: 20px;
+}
+
+/* grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+/* note card */
+.note{
+    background:#fffaf0;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transform:rotate(-2deg);
+    cursor:pointer;
+    position:relative;
+    transition:0.4s;
+    min-height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:18px;
+    color:#333;
+    filter:blur(2px);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* tape */
+.note::before{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:15px;
+    background:rgba(255,255,255,0.6);
+    top:-8px;
+    left:50%;
+    transform:translateX(-50%) rotate(-5deg);
+    border-radius:4px;
+}
+
+/* hover */
+.note:hover{
+    transform:scale(1.05) rotate(0deg);
+}
+
+/* revealed */
+.note.active{
+    filter:blur(0);
+    background:lightblue;
+}
+
+/* mobile */
+@media(max-width:768px){
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+        padding:15px;
+    }
+}
+.next-section{
+    text-align:center;
+    margin-top:40px;
+}
+
+.next-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#00b4d8;
+    color:white;
+    padding:14px 35px;
+    border-radius:30px;
+    box-shadow:0 0 20px #00b4d8;
+    font-size:18px;
+    transition:0.3s;
+    font-family: 'Poppins',sans-serif;
+}
+
+.next-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px #00b4d8;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Things My Heart Knows <br> About You❤️</h1>
+<div class="subtitle">Click each note to reveal my heart 💌</div>
+
+<div class="grid">
+
+<div class="note" onclick="this.classList.add('active')">You make me smile even on bad days ❤️</div>
+<div class="note" onclick="this.classList.add('active')">You are my safe place 🏡</div>
+<div class="note" onclick="this.classList.add('active')">You understand my silence 💙</div>
+
+<div class="note" onclick="this.classList.add('active')">You never give up on us ♾️</div>
+<div class="note" onclick="this.classList.add('active')">You are my peace ☁️</div>
+<div class="note" onclick="this.classList.add('active')">You hold my heart gently 🤍</div>
+
+<div class="note" onclick="this.classList.add('active')">You are my strength 💪</div>
+<div class="note" onclick="this.classList.add('active')">You are my happiness 😊</div>
+<div class="note" onclick="this.classList.add('active')">You are my forever ♾️</div>
+
+<div class="note" onclick="this.classList.add('active')">You support my dreams 🌟</div>
+<div class="note" onclick="this.classList.add('active')">You believe in me 🚀</div>
+<div class="note" onclick="this.classList.add('active')">You make life beautiful 🌈</div>
+
+<div class="note" onclick="this.classList.add('active')">You are my soulmate 💍</div>
+<div class="note" onclick="this.classList.add('active')">You are my comfort 🛋️</div>
+<div class="note" onclick="this.classList.add('active')">You are my world 🌎</div>
+
+</div>
+<div class="next-section">
+    <a href="openwhen.html" class="next-btn">Next Page 💌</a>
+</div>
+<audio id="bgMusic" autoplay loop>
+    <source src="a4.mp3" type="audio/mp4">
+</audio>
+<script>
+    window.onload = function(){
+        const music = document.getElementById("bgMusic");
+        music.play().catch(()=>{
+            document.body.addEventListener("click", ()=>{
+                music.play();
+            }, {once:true});
+        });
+    }
+    </script>
+</body>
+</html>

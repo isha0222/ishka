@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Together Since ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background: linear-gradient(135deg,#000814,#001d3d,#003566);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    position:relative;
+    text-align:center;
+}
+
+/* Stars */
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* Floating circles */
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(0,180,216,0.15);
+    animation: move 12s infinite linear;
+}
+@keyframes move{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-50px);}
+    100%{transform:translateY(0);}
+}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation: floatHeart 8s linear infinite;
+}
+@keyframes floatHeart{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+/* Container */
+.container{
+    z-index:2;
+    width:90%;
+    max-width:1000px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 0 25px rgba(0,180,216,0.3);
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:40px;
+    margin-bottom:10px;
+    text-shadow:0 0 15px #00b4d8;
+}
+
+p{
+    margin-bottom:30px;
+    color:#d9faff;
+    font-size:16px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.box{
+    background: rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:15px;
+    min-width:120px;
+    box-shadow:0 0 15px rgba(0,180,216,0.2);
+}
+
+.box h2{
+    font-size:30px;
+    color:#00b4d8;
+}
+
+.box span{
+    font-size:16px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    text-decoration:none;
+    background:#00b4d8;
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    font-size:16px;
+    box-shadow:0 0 15px #00b4d8;
+    transition:0.4s;
+}
+
+.btn:hover{
+    background:white;
+    color:#001d3d;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    h1{
+        font-size:28px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .box{
+        min-width:90px;
+        padding:15px;
+    }
+    .box h2{
+        font-size:28px;
+    }
+    .btn{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .countdown{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+    <h1>Together Since ❤️</h1>
+    <p>Every second with you is precious… 💙</p>
+
+    <div class="countdown">
+        <div class="box"><h2 id="days">0</h2><span>Days</span></div>
+        <div class="box"><h2 id="hours">0</h2><span>Hours</span></div>
+        <div class="box"><h2 id="minutes">0</h2><span>Minutes</span></div>
+        <div class="box"><h2 id="seconds">0</h2><span>Seconds</span></div>
+    </div>
+
+    <a href="story.html" class="btn">Next Page ✨</a>
+</div>
+
+<script>
+// Countdown
+const startDate = new Date("Nov 8, 2022 00:00:00").getTime();
+
+setInterval(()=>{
+    const now = new Date().getTime();
+    const distance = now - startDate;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance % (1000*60))/1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+},1000);
+
+// Stars
+for(let i=0;i<100;i++){
+    let star=document.createElement("span");
+    star.style.top=Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.animationDuration=(Math.random()*3+2)+"s";
+    document.querySelector(".stars").appendChild(star);
+}
+
+// Circles
+for(let i=0;i<8;i++){
+    let circle=document.createElement("div");
+    circle.className="circle";
+    let size=Math.random()*150+50;
+    circle.style.width=size+"px";
+    circle.style.height=size+"px";
+    circle.style.left=Math.random()*100+"%";
+    circle.style.top=Math.random()*100+"%";
+    circle.style.animationDuration=(Math.random()*8+5)+"s";
+    document.body.appendChild(circle);
+}
+
+// Hearts
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💙";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>

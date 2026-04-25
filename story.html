@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#000814,#001d3d,#003566);
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* stars */
+.stars span{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* heading */
+.header{
+    text-align:center;
+    padding:60px 20px;
+}
+.header h1{
+    font-size:50px;
+    font-family:'Playfair Display',serif;
+    text-shadow:0 0 15px #00b4d8;
+}
+.header p{
+    color:#d9faff;
+    margin-top:10px;
+}
+
+/* timeline */
+.timeline{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+    padding:20px 0;
+}
+
+.timeline::after{
+    content:'';
+    position:absolute;
+    width:4px;
+    background:#00b4d8;
+    top:0;
+    bottom:0;
+    left:50%;
+    margin-left:-2px;
+    box-shadow:0 0 15px #00b4d8;
+}
+
+.container{
+    padding:20px 40px;
+    position:relative;
+    width:50%;
+}
+
+.container.left{
+    left:0;
+}
+.container.right{
+    left:50%;
+}
+
+.content{
+    padding:20px;
+    background:rgba(255,255,255,0.05);
+    border-radius:15px;
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 20px rgba(0,180,216,0.2);
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.content:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(0,180,216,0.5);
+}
+
+.container::before{
+    content:'💙';
+    position:absolute;
+    top:30px;
+    right:-15px;
+    font-size:20px;
+    z-index:1;
+}
+.container.right::before{
+    left:-15px;
+}
+
+/* popup */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:#001d3d;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 25px #00b4d8;
+    display:none;
+    z-index:100;
+    max-width:80%;
+    text-align:center;
+}
+.popup button{
+    margin-top:20px;
+    background:#00b4d8;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+}
+
+/* next button */
+.btn{
+    display:block;
+    width:max-content;
+    margin:50px auto;
+    text-decoration:none;
+    background:#00b4d8;
+    color:white;
+    padding:14px 35px;
+    border-radius:30px;
+    box-shadow:0 0 15px #00b4d8;
+}
+
+/* responsive */
+@media(max-width:768px){
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    padding:20px 10px;
+}
+
+.timeline::after{
+    display:none;
+}
+
+.container{
+    width:95% !important;
+    max-width:350px;
+    position:relative !important;
+    left:0 !important;
+    padding:0 !important;
+    margin:0 auto !important;
+    transform:rotate(-2deg);
+}
+
+.container:nth-child(even){
+    transform:rotate(2deg);
+}
+
+.container::after{
+    display:none;
+}
+
+.content{
+    background:#fffaf0;
+    color:#333;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    border:2px dashed #ddd;
+    position:relative;
+}
+
+/* tape effect */
+.content::before{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:20px;
+    background:rgba(255,255,255,0.6);
+    top:-10px;
+    left:50%;
+    transform:translateX(-50%) rotate(-5deg);
+    border-radius:5px;
+}
+
+.content h2{
+    font-size:20px;
+    font-family:'Dancing Script',cursive;
+    color:#0a3d62;
+}
+
+.content p{
+    font-size:15px;
+    line-height:1.7;
+    font-family:'Poppins',sans-serif;
+}
+
+h1{
+    font-size:28px;
+}
+}
+
+.love-note{
+    margin-top:10px;
+    font-size:18px;
+    color:#d9faff;
+    text-align:center;
+    font-style:italic;
+    animation: fadeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeGlow{
+    from{
+        opacity:0.6;
+        transform:translateY(0px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(-5px);
+        text-shadow:0 0 10px #00b4d8;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="header">
+    <h1>Our Beautiful Story ❤️</h1>
+    <p>Every moment with you is my favorite memory ✨</p>
+</div>
+
+<div class="timeline">
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('15 Oct 2021 ❤️ The day you saw me for the very first time… maybe destiny started writing our story from here.')">
+            <h2>15 Oct 2021</h2>
+            <p>First Time You Saw Me 👀</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('10 Sep 2022 👻 We became Snapchat friends… a tiny beginning of forever.')">
+            <h2>10 Sep 2022</h2>
+            <p>Snapchat Friends 💛</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('26 Sep 2022 ✨ We met for the first time… unforgettable.')">
+            <h2>26 Sep 2022</h2>
+            <p>First Meet 🤍</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('28 Sep 2022 📸 Our first picture together… still my favorite.')">
+            <h2>28 Sep 2022</h2>
+            <p>First Picture 📷</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('3 Oct 2022 💜 Purple Purple… our first warm hug.')">
+            <h2>3 Oct 2022</h2>
+            <p>First Hug 🤗</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('4 Oct 2022 😅 Our first fight… but love stayed.')">
+            <h2>4 Oct 2022</h2>
+            <p>First Fight 💔</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('8 Oct 2022 ❤️ The day I said YES to forever.')">
+            <h2>8 Oct 2022</h2>
+            <p>I Said Yes 💍</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('14 Oct 2022 🎬 Our first movie together.')">
+            <h2>14 Oct 2022</h2>
+            <p>First Movie 🍿</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('15 Oct 2022 💋 Our first kiss… magical.')">
+            <h2>15 Oct 2022</h2>
+            <p>First Kiss 😘</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('2 Nov 2022 🎂 Your first birthday with me… my surprise flopped but my love didn’t.')">
+            <h2>2 Nov 2022</h2>
+            <p>His Birthday 🎉</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('17 Nov 2022 🏕️ Tent house memories together.')">
+            <h2>17 Nov 2022</h2>
+            <p>Tent House 🏕️</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('24 Nov 2022 🌄 First time at the view together… peaceful and beautiful.')">
+            <h2>24 Nov 2022</h2>
+            <p>First View 🌌</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('14 Dec 2022 🚗 Our first car long drive… endless roads and endless love.')">
+            <h2>14 Dec 2022</h2>
+            <p>Long Drive 💙</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('22 Jan 2023 🎂 My first birthday with your surprise.')">
+            <h2>22 Jan 2023</h2>
+            <p>My Birthday 🎁</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('4 Feb 2023 ❤️ One of the most memorable days of our life.')">
+            <h2>4 Feb 2023</h2>
+            <p>Memorable Day ✨</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('26 Mar 2023 🚗 Vadodara to Anand long drive.')">
+            <h2>26 Mar 2023</h2>
+            <p>Long Drive Again 💞</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('29 Apr 2023 💔 Last talk… hardest phase when family found out.')">
+            <h2>29 Apr 2023</h2>
+            <p>Hardest Phase 😢</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('23 Mar 2024 🌸 Fagan Feri together.')">
+            <h2>23 Mar 2024</h2>
+            <p>Fagan Feri 🌼</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('20 Apr 2024 🏡 First trip to Pooja Home.')">
+            <h2>20 Apr 2024</h2>
+            <p>First Trip ✈️</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('3 Mar 2025 💔 The day I hurt you a lot… I am sorry.')">
+            <h2>3 Mar 2025</h2>
+            <p>Sorry Day 😔</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('7 Mar 2025 🎶 Our first concert together – Kailash Kher.')">
+            <h2>7 Mar 2025</h2>
+            <p>First Concert 🎤</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('24 May 2025 🎵 Atul Purohit night… unforgettable.')">
+            <h2>24 May 2025</h2>
+            <p>Atul Purohit Night 💃</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('1 Nov 2025 ❤️ Birthday celebration… I wrote something special for you.')">
+            <h2>1 Nov 2025</h2>
+            <p>Birthday Celebration 🎂</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('14 Nov 2025 💍 The day we became forever… marriage.')">
+            <h2>14 Nov 2025</h2>
+            <p>Forever Marriage ♾️</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('6 Jan 2026 💔 The worst day… still painful.')">
+            <h2>6 Jan 2026</h2>
+            <p>Worst Day 😭</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('22 Jan 2026 🎂 My birthday celebration together.')">
+            <h2>22 Jan 2026</h2>
+            <p>Birthday Celebration 🎁</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content" onclick="showPopup('29 Jan 2026 😞 Big fight… I was upset.')">
+            <h2>29 Jan 2026</h2>
+            <p>Big Fight 💔</p>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content" onclick="showPopup('31 Jan 2026 🙏 First Mataji Darshan together.')">
+            <h2>31 Jan 2026</h2>
+            <p>Mataji Darshan 🛕</p>
+        </div>
+    </div>
+
+</div>
+<div class="love-note">
+    We will stay together… always & forever ❤️♾️
+</div>
+<a href="memories.html" class="btn">Next Memories 📸</a>
+
+<div class="popup" id="popupBox">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">Close ✨</button>
+</div>
+<audio id="bgMusic" autoplay loop>
+    <source src="a3.mp3" type="audio/mp4">
+</audio>
+<script>
+// stars
+for(let i=0;i<100;i++){
+    let star=document.createElement("span");
+    star.style.top=Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.animationDuration=(Math.random()*3+2)+"s";
+    document.querySelector(".stars").appendChild(star);
+}
+
+// popup
+function showPopup(text){
+    document.getElementById("popupText").innerText=text;
+    document.getElementById("popupBox").style.display="block";
+}
+function closePopup(){
+    document.getElementById("popupBox").style.display="none";
+}
+window.onload = function(){
+    const music = document.getElementById("bgMusic");
+    music.play().catch(()=>{
+        document.body.addEventListener("click", ()=>{
+            music.play();
+        }, {once:true});
+    });
+}
+</script>
+
+</body>
+</html>
