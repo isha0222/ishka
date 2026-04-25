@@ -256,8 +256,8 @@ body{
     <p id="popupText"></p>
     <button onclick="closePopup()">Close ✨</button>
 </div>
-<audio id="bgMusic" autoplay loop>
-    <source src="a1.m4a" type="audio/mpeg">
+<audio id="bgMusic" loop>
+    <source src="a2.m4a" type="audio/mp4">
 </audio>
 <script>
 // stars
@@ -295,10 +295,15 @@ function closeSecret(){
     document.getElementById("secretPopup").style.display="none";
 }
 
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
     const music = document.getElementById("bgMusic");
+
     music.play().catch(() => {
-        document.body.addEventListener("click", () => {
+        document.addEventListener("click", function () {
+            music.play();
+        }, { once:true });
+
+        document.addEventListener("touchstart", function () {
             music.play();
         }, { once:true });
     });
